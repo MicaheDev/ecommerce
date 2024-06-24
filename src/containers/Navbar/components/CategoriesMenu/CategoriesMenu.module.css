@@ -1,0 +1,16 @@
+.menu {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.menu > li > a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--fw-normal);
+}
+
+.menu > li > a:hover {
+  text-decoration: underline;
+}

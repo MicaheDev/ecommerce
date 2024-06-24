@@ -1,0 +1,5 @@
+.footerContainer {
+  background: var(--black);
+  padding: 20px 40px;
+  color: var(--white);
+}

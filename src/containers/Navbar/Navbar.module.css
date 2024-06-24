@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--black);
+
+
+  .containerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .containerBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+
