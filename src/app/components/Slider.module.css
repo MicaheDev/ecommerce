@@ -1,0 +1,22 @@
+.slider {
+  position: relative;
+}
+
+.img {
+  aspect-ratio: 16/9;
+}
+
+.prevBtn {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  left: 0;
+}
+
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  right: 0;
+  
+}
