@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./Slider.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 
 const images = [
@@ -31,54 +31,53 @@ const images = [
     "image-url":
       "https://images.unsplash.com/photo-1719124627442-354c426e62a5?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-  {
-    description: "Girl Sitting on Chair",
-    "image-url":
-      "https://images.unsplash.com/photo-1719124627442-354c426e62a5?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
 ];
 
 export default function Slider() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const sliderRef = useRef(null);
+  const [position, setPosition] = useState(0);
+  const [widthImg, setWidthImg] = useState(0);
 
-  const selectNewImage = (index: number, images: any, next = true) => {
-    const condition = next
-      ? selectedIndex < images.length - 1
-      : selectedIndex > 0;
-    const nextIndex = next
-      ? condition
-        ? selectedIndex + 1
-        : 0
-      : condition
-      ? selectedIndex - 1
-      : images.length - 1;
-    setSelectedImage(images[nextIndex]);
-    setSelectedIndex(nextIndex);
+  useEffect(() => {
+    if (sliderRef.current) {
+      const container: HTMLDivElement = sliderRef.current;
+      setWidthImg(100 / container.children.length);
+    }
+  }, []);
+
+  const moveToLeft = () => {
+    setPosition((prev) => (prev === 0 ? 100 - widthImg : prev - widthImg));
   };
 
-  const previous = () => {
-    selectNewImage(selectedIndex, images, false);
+  const moveToRight = () => {
+    setPosition((prev) => (prev === 100 - widthImg ? 0 : prev + widthImg));
   };
 
-  const next = () => {
-    selectNewImage(selectedIndex, images);
-  };
-
+  useEffect(() => {
+    if (sliderRef.current) {
+      const container: HTMLDivElement = sliderRef.current;
+      container.style.transform = `translateX(-${position}%)`;
+    }
+  }, [position]);
   return (
     <div className={styles.slider}>
-      <Image
-        width={1280}
-        height={720}
-        className={styles.img}
-        src={selectedImage["image-url"]}
-        alt={selectedImage.description}
-      />
-      <button className={styles.prevBtn} onClick={previous}>
-        <RiArrowLeftWideFill size={50} />
+      <div className={styles.sliders} ref={sliderRef}>
+        {images.map((image) => (
+          <section className={styles.sliderSection} key={image.description}>
+            <Image
+              width={1280}
+              height={720}
+              src={image["image-url"]}
+              alt={image.description}
+            />
+          </section>
+        ))}
+      </div>
+      <button onClick={moveToLeft} className={styles.prevBtn}>
+        <RiArrowLeftWideFill size={40} />
       </button>
-      <button className={styles.nextBtn} onClick={next}>
-        <RiArrowRightWideFill size={50}/>
+      <button onClick={moveToRight} className={styles.nextBtn}>
+        <RiArrowRightWideFill size={40} />
       </button>
     </div>
   );
