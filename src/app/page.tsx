@@ -1,10 +1,9 @@
-import styles from "./Home.module.css";
-import Slider from "./components/Slider";
+import Slider from "@/components/Slider/Slider";
+import styles from "@/styles/Home.module.css"
 
 export default function Home() {
   return (
     <>
-      <h1>Hola</h1>
       <Slider/>
     </>
   );

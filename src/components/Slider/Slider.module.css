@@ -1,0 +1,46 @@
+.slider {
+  position: relative;
+  background-color: var(--black);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  aspect-ratio: 16/9;
+  height: 400px;
+  width: 80%;
+}
+
+.prevBtn {
+  position: absolute;
+  top: 40%;
+  bottom: auto;
+  left: 0;
+  width: 40px;
+  height: 80px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+
+}
+
+.nextBtn {
+  position: absolute;
+  top: 40%;
+  bottom: auto;
+  right: 0;
+  width: 40px;
+  height: 80px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
