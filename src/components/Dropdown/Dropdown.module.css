@@ -17,6 +17,7 @@
   text-decoration: none;
   border-radius: 6px;
   position: relative;
+  z-index: 10;
 }
 
 .label {
@@ -32,11 +33,6 @@
   inset: 0;
   cursor: pointer;
   opacity: 0;
-}
-
-.check:focus {
-    outline: 2px solid var(--purple);
-  
 }
 
 .content {
@@ -58,10 +54,8 @@
 }
 
 .anchor {
-  padding: 1em 0.5em;
+  padding: 1em;
   color: var(--white);
   display: inline-block;
   text-decoration: none;
 }
-
-

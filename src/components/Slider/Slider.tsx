@@ -45,6 +45,14 @@ export default function Slider() {
     }
   }, []);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      moveToRight();
+    }, 10000);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, [widthImg]);
+
   const moveToLeft = () => {
     setPosition((prev) => (prev === 0 ? 100 - widthImg : prev - widthImg));
   };
@@ -59,14 +67,17 @@ export default function Slider() {
       container.style.transform = `translateX(-${position}%)`;
     }
   }, [position]);
+  
   return (
-    <div className={styles.slider}>
+    <div className={styles.container}>
+      <div className={styles.slider}>
       <div className={styles.sliders} ref={sliderRef}>
         {images.map((image) => (
           <section className={styles.sliderSection} key={image.description}>
             <Image
               width={1280}
               height={720}
+              priority={true}
               src={image["image-url"]}
               alt={image.description}
             />
@@ -79,6 +90,7 @@ export default function Slider() {
       <button onClick={moveToRight} className={styles.nextBtn}>
         <RiArrowRightWideFill size={40} />
       </button>
+    </div>
     </div>
   );
 }

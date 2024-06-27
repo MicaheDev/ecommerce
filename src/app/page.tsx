@@ -1,14 +1,14 @@
-import Slider from "@/components/Slider/Slider";
+import { Slider } from "@/components";
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div>
-      <div style={{background: "#000"}}>
-      <div style={{ display: "grid", placeContent: "center", width: "80%", margin: "auto" }}>
-        <Slider />
+    <section className={styles.container}>
+      <div className={styles.discount}>
+        <h3>SALE - Hasta 50% de descuento</h3>
+        <p>Nuevos artículos añadidos</p>
       </div>
-      </div>
-    </div>
+      <Slider />
+    </section>
   );
 }

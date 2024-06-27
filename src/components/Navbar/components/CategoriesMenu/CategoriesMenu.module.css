@@ -9,6 +9,7 @@
   text-decoration: none;
   color: var(--black);
   font-weight: var(--fw-normal);
+  
 }
 
 .menu > li > a:hover {

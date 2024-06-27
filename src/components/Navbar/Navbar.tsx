@@ -13,7 +13,8 @@ export default function Navbar() {
       <nav className={styles.navbar}>
         <div className={styles.containerTop}>
           <Link href="/" className={styles.brand}>
-            Tienda Web
+            <span>Tienda</span>
+            <span>Web</span>
           </Link>
           <Menu />
         </div>

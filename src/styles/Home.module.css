@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  max-width: 768px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discount {
+  width: 100%;
+  background-color: var(--red);
+  height: 150px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.discount h3 {
+  font-size: var(--fs-xl);
+}

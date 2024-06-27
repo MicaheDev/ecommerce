@@ -1,10 +1,8 @@
-import "../styles/globals.css"
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import Navbar from "@/containers/Navbar/Navbar";
-import AuthProvider from "@/components/AuthProvider/AuthProvider";
-import Footer from "@/containers/Footer/Footer";
 const montserrat = Montserrat({ subsets: ["latin"] });
+import { AuthProvider, Navbar, Footer } from "@/components";
 
 export const metadata: Metadata = {
   title: "Tienda Web",
@@ -22,7 +20,7 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar />
           <main>{children}</main>
-         <Footer/>
+          <Footer />
         </AuthProvider>
       </body>
     </html>

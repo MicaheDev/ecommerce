@@ -8,7 +8,7 @@
   transition: right 300ms ease-in-out;
   border-left: 1px solid var(--black);
   padding: 20px;
-  z-index: 2;
+  z-index: 20;
 }
 
 .container.expand {

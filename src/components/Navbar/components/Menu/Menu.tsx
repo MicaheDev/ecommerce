@@ -1,7 +1,7 @@
 import { Cart } from "@/components";
 import Link from "next/link";
 import React, { ReactNode, useContext, useState } from "react";
-import { RiBox3Line, RiHeartLine, RiUser3Line } from "react-icons/ri";
+import { RiBox3Line, RiHeartLine, RiShoppingBagLine, RiUser3Line } from "react-icons/ri";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import { AuthContext } from "@/components/AuthProvider/AuthProvider";
 import styles from "./Menu.module.css";
@@ -38,18 +38,18 @@ export default function Menu() {
   const menuItems: menuItem[] = [
     {
       label: "Pedidos",
-      icon: <RiBox3Line size={30} />,
+      icon: <RiBox3Line size={20} />,
       href: "/orders",
     },
     {
       label: "Favoritos",
-      icon: <RiHeartLine size={30} />,
+      icon: <RiHeartLine size={20} />,
       clickEvent: () => setShowFavorites(true),
       href: "",
     },
     {
       label: "0$",
-      icon: <RiHeartLine size={30} />,
+      icon: <RiShoppingBagLine size={20}/>,
       clickEvent: () => setShowCart(true),
       href: "",
     },
@@ -60,7 +60,7 @@ export default function Menu() {
       return (
         <Dropdown
           item={{
-            icon: <RiUser3Line size={30} />,
+            icon: <RiUser3Line size={20} />,
             label: user?.email,
             href: "",
           }}
@@ -71,7 +71,7 @@ export default function Menu() {
       return (
         <Dropdown
           item={{
-            icon: <RiUser3Line size={30} />,
+            icon: <RiUser3Line size={20} />,
             label: "Cuenta",
             href: "/auth/signin",
           }}

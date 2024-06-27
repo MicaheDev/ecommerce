@@ -5,7 +5,6 @@ import { DropdownProps } from "./types";
 import styles from "./Dropdown.module.css";
 
 export default function Dropdown({ item, items }: DropdownProps) {
-  console.log(items);
   return (
     <ul className={styles.dropdown}>
       <li className={styles.list}>
