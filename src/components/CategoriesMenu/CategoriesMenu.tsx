@@ -1,6 +1,10 @@
-import styles from "./CategoriesMenu.module.css"
+import styles from "./CategoriesMenu.module.css";
 
-export default function CategoriesMenu() {
+interface CategoriesMenuProps {
+  color: string;
+}
+
+export default function CategoriesMenu({ color }: CategoriesMenuProps) {
   const categories = [
     {
       label: "Hombre",
@@ -18,13 +22,23 @@ export default function CategoriesMenu() {
       label: "Niños",
       href: "kids",
     },
+    {
+      label: "Hogar",
+      href: "home",
+    },
+    {
+      label: "Deporte",
+      href: "sport",
+    },
   ];
 
   return (
     <ul className={styles.menu}>
       {categories.map((category) => (
         <li key={category.label}>
-          <a href={category.href}>{category.label}</a>
+          <a href={category.href} style={{ color: `var(--${color})` }}>
+            {category.label}
+          </a>
         </li>
       ))}
     </ul>

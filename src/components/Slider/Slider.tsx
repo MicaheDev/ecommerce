@@ -7,29 +7,29 @@ import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 
 const images = [
   {
-    description: "Lady with a Teddy",
+    description: "woman model",
     "image-url":
-      "https://images.unsplash.com/photo-1719293812273-bdb5ddd56dd4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://hmchile.vtexassets.com/assets/vtex.file-manager-graphql/images/b5a4a5b1-ee6b-4f23-9c54-d8562c30fe95___f873fff3a05a5c44bbd78b90591b3981.webp",
   },
   {
-    description: "Girl with camera",
+    description: "man model",
     "image-url":
-      "https://images.unsplash.com/photo-1719244698547-b3e6ed8ffe72?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://hmchile.vtexassets.com/assets/vtex.file-manager-graphql/images/5ac25d9e-136b-4bd7-a711-e5fb1d9a2556___326cb97021bdc4c4b9afde68b718df5d.webp",
   },
   {
-    description: "Beautiful Girl with Glasses",
+    description: "babys smiling",
     "image-url":
-      "https://images.unsplash.com/photo-1719293624624-d00ad3afb961?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://hmchile.vtexassets.com/assets/vtex.file-manager-graphql/images/ce361177-6663-4065-bd8b-817b772e505c___51d9258fb9182de7d2e0437bd337fb08.webp",
   },
   {
-    description: "Redhead with frackles",
+    description: "kid",
     "image-url":
-      "https://images.unsplash.com/photo-1719273659346-feb0ae0c38fc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://hmchile.vtexassets.com/assets/vtex.file-manager-graphql/images/91870a4b-bac6-4d5b-8eaa-c9bbd61fbab6___8108cf8537163ed61e57523e09dc8b2f.webp",
   },
   {
-    description: "Girl in black dress",
+    description: "sport",
     "image-url":
-      "https://images.unsplash.com/photo-1719124627442-354c426e62a5?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://hmchile.vtexassets.com/assets/vtex.file-manager-graphql/images/c9af9dfb-9878-4fff-9ce9-c2868dbb198e___5adf8dae33d1b83d4cfae8e4107fea5d.webp",
   },
 ];
 
@@ -67,30 +67,30 @@ export default function Slider() {
       container.style.transform = `translateX(-${position}%)`;
     }
   }, [position]);
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.slider}>
-      <div className={styles.sliders} ref={sliderRef}>
-        {images.map((image) => (
-          <section className={styles.sliderSection} key={image.description}>
-            <Image
-              width={1280}
-              height={720}
-              priority={true}
-              src={image["image-url"]}
-              alt={image.description}
-            />
-          </section>
-        ))}
+        <div className={styles.sliders} ref={sliderRef}>
+          {images.map((image) => (
+            <section className={styles.sliderSection} key={image.description}>
+              <Image
+                width={1280}
+                height={720}
+                priority={true}
+                src={image["image-url"]}
+                alt={image.description}
+              />
+            </section>
+          ))}
+        </div>
+        <button onClick={moveToLeft} className={styles.prevBtn}>
+          <RiArrowLeftWideFill size={40} />
+        </button>
+        <button onClick={moveToRight} className={styles.nextBtn}>
+          <RiArrowRightWideFill size={40} />
+        </button>
       </div>
-      <button onClick={moveToLeft} className={styles.prevBtn}>
-        <RiArrowLeftWideFill size={40} />
-      </button>
-      <button onClick={moveToRight} className={styles.nextBtn}>
-        <RiArrowRightWideFill size={40} />
-      </button>
-    </div>
     </div>
   );
 }

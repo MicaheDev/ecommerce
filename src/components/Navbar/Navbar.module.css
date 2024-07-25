@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   padding: 20px 40px;
-  border-bottom: 1px solid var(--gray2);
 
   .containerTop {
     display: flex;

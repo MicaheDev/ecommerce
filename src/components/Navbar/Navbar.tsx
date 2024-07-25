@@ -3,9 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import Menu from "./components/Menu/Menu";
-import CategoriesMenu from "./components/CategoriesMenu/CategoriesMenu";
-import Search from "./components/Search/Search";
+import { Menu, Search } from "./components";
+import { CategoriesMenu } from "@/components";
 
 export default function Navbar() {
   return (
@@ -20,7 +19,7 @@ export default function Navbar() {
         </div>
 
         <div className={styles.containerBottom}>
-          <CategoriesMenu />
+          <CategoriesMenu color="black"/>
           <Search />
         </div>
       </nav>

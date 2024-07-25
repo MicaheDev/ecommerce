@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "assets.adnradio.cl",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "hmchile.vtexassets.com",
+        port: "",
+      }
     ],
   },
 };
